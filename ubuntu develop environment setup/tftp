@@ -1,0 +1,13 @@
+service tftp
+{
+	disable = no
+	socket_type = dgram
+	wait = no
+	user = root
+	protocol = udp
+	server = /usr/sbin/in.tftpd
+	server_args =  -c -s /tftpboot
+	per_source   = 11
+	cps    = 100 2
+	flags    = IPv4
+}
