@@ -21,6 +21,12 @@ mkdir   /root/.vim/ -p
 cp 	.vimrc 		/root/
 cp 	doc/ 		/root/.vim/  -R
 cp 	plugin/ 	/root/.vim/  -R
+
+mkdir   ~/.vim/ -p
+cp 	.vimrc 		~/
+cp 	doc/ 		~/.vim/  -R
+cp 	plugin/ 	~/.vim/  -R
+
 cp	tftp 		/etc/xinetd.d/
 cp 	smb.conf    /etc/samba/smb.conf
 
@@ -37,8 +43,13 @@ echo "/nfsroot *(sync,rw,no_root_squash)" >> /etc/exports
 
 /etc/init.d/nfs-kernel-server restart
 /etc/init.d/xinetd restart
-ln -s /samba/anonymous/  /home/bear/Desktop/share
+
+ln -s /samba/anonymous  ~/Desktop/samba
+ln -s /nfsroot  ~/Desktop/nfsroot
+ln -s /tftpboot  ~/Desktop/tftpboot
+
 update-rc.d -f tftpd-hpa remove
+
 #chmod +x qt-opensource-linux-x64-5.3.2.run 
 #./qt-opensource-linux-x64-5.3.2.run
 
