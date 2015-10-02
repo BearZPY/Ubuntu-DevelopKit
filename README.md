@@ -7,6 +7,7 @@ Ubuntu-12.04和Ubuntu-14.04 OK 其余版本未测试
 
 #### 操作
 确保网络畅通，在普通用户模式下的命令行里面输入 定位到setup所在目录
+
 	cp setup/   ~/Desktop/  -R
 	cd ~/Desktop/setup/
 	sudo sh step.sh
